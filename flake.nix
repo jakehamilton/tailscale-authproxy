@@ -27,6 +27,7 @@
 
               src = ./.;
 
+              proxyVendor = true;
               vendorSha256 = "sha256-j/bv0YqVCRcXedoHYIcy9612nUjwDNi9iJJMGWU96E4";
 
               meta = with lib;
@@ -41,9 +42,10 @@
 
         devShells = {
           default = with channels.nixpkgs;
-            mkShell {
-              buildInputs = [ go_1_19 gopls ];
-            };
+            mkShell
+              {
+                buildInputs = [ go_1_19 gopls ];
+              };
         };
       };
     };
